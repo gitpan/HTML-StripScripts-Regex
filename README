@@ -1,0 +1,44 @@
+NAME
+    HTML::StripScripts::Regex - XSS filter using a regular expression
+
+SYNOPSIS
+      use HTML::StripScripts::Regex;
+
+      my $hss = HTML::StripScripts::Regex->new({ Context => 'Inline' });
+
+      $hss->input("<i>hello, world!</i>");
+
+      print $hss->filtered_document;
+
+DESCRIPTION
+    This class subclasses HTML::StripScripts, and adds an input method based
+    on a regular expression. See HTML::StripScripts.
+
+    Using a regular expression to parse HTML is error prone and inefficient
+    for large documents. If HTML::Parser is available then
+    HTML::StripScripts::Parser should be used in preference to this module.
+
+METHODS
+    This subclass adds the following methods to those of HTML::StripScripts.
+
+    input ( TEXT )
+        Parses an HTML document and runs it through the filter. TEXT must be
+        the entire HTML document to be filtered, as a single flat string.
+
+SUBCLASSING
+    The "HTML::StripScripts::Regex" class is subclassable, in exactly the
+    same way as "HMTL::StripScripts". See "SUBCLASSING" in
+    HTML::StripScripts for details.
+
+SEE ALSO
+    HTML::StripScripts, HTML::StripScripts::Parser, HTML::Parser
+
+AUTHOR
+    Nick Cleaton <nick@cleaton.net>
+
+COPYRIGHT
+    Copyright (C) 2003 Nick Cleaton. All Rights Reserved.
+
+    This module is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
