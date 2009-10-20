@@ -1,6 +1,6 @@
 
 use strict;
-BEGIN { $^W = 1 }
+use warnings;
 
 use Test::More tests => 2;
 use HTML::StripScripts::Regex;

@@ -1,8 +1,12 @@
-MANIFEST
+Build.PL
 Changes
-Makefile.PL
+lib/HTML/StripScripts/Regex.pm
+MANIFEST			This list of files
+MANIFEST.SKIP
 README
-Regex.pm
 t/10basic.t
 t/20script.t
+t/40pod.t
 t/50flow.t
+Makefile.PL
+META.yml

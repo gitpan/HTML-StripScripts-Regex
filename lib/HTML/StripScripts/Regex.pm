@@ -1,15 +1,20 @@
 package HTML::StripScripts::Regex;
 use strict;
-
-use vars qw($VERSION);
-$VERSION = '0.01';
-# $Rev: 48 $
+use warnings;
+our $VERSION = '0.02';
 
 =head1 NAME
 
 HTML::StripScripts::Regex - XSS filter using a regular expression
 
+=head1 VERSION
+
+Version 0.02
+
 =head1 SYNOPSIS
+
+This class subclasses L<HTML::StripScripts>, and adds an input method
+based on a regular expression.  See L<HTML::StripScripts>.
 
   use HTML::StripScripts::Regex;
 
@@ -18,11 +23,6 @@ HTML::StripScripts::Regex - XSS filter using a regular expression
   $hss->input("<i>hello, world!</i>");
 
   print $hss->filtered_document;
-
-=head1 DESCRIPTION
-
-This class subclasses L<HTML::StripScripts>, and adds an input method
-based on a regular expression.  See L<HTML::StripScripts>.
 
 Using a regular expression to parse HTML is error prone and inefficient
 for large documents.  If L<HTML::Parser> is available then
@@ -117,7 +117,8 @@ sub input {
 =head1 SUBCLASSING
 
 The C<HTML::StripScripts::Regex> class is subclassable, in exactly the same
-way as C<HMTL::StripScripts>.  See L<HTML::StripScripts/"SUBCLASSING"> for details.
+way as C<HMTL::StripScripts>.  See L<HTML::StripScripts/"SUBCLASSING"> for
+details.
 
 =head1 SEE ALSO
 
@@ -125,16 +126,15 @@ L<HTML::StripScripts>, L<HTML::StripScripts::Parser>, L<HTML::Parser>
 
 =head1 AUTHOR
 
-Nick Cleaton E<lt>nick@cleaton.netE<gt>
+Nick Cleaton, C<< <nick at cleaton dot net> >>
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT & LICENSE
 
-Copyright (C) 2003 Nick Cleaton.  All Rights Reserved.
+Copyright 2009 Nick Cleaton, all rights reserved.
 
-This module is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
+This program is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
 
 =cut
 
 1;
-

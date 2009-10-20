@@ -1,8 +1,7 @@
 
 use strict;
+use warnings;
 use Test::More tests => 14;
-
-BEGIN { $^W = 1 }
 
 use_ok( 'HTML::StripScripts::Regex' );
 

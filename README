@@ -1,44 +1,53 @@
-NAME
-    HTML::StripScripts::Regex - XSS filter using a regular expression
+This class subclasses HTML::StripScripts, and adds an input method based on
+a regular expression. See HTML::StripScripts.
 
-SYNOPSIS
-      use HTML::StripScripts::Regex;
+  use HTML::StripScripts::Regex;
 
-      my $hss = HTML::StripScripts::Regex->new({ Context => 'Inline' });
+  my $hss = HTML::StripScripts::Regex->new({ Context => 'Inline' });
 
-      $hss->input("<i>hello, world!</i>");
+  $hss->input("<i>hello, world!</i>");
 
-      print $hss->filtered_document;
+  print $hss->filtered_document;
 
-DESCRIPTION
-    This class subclasses HTML::StripScripts, and adds an input method based
-    on a regular expression. See HTML::StripScripts.
+Using a regular expression to parse HTML is error prone and inefficient for
+large documents. If HTML::Parser is available then
+HTML::StripScripts::Parser should be used in preference to this module.
 
-    Using a regular expression to parse HTML is error prone and inefficient
-    for large documents. If HTML::Parser is available then
-    HTML::StripScripts::Parser should be used in preference to this module.
+INSTALLATION
 
-METHODS
-    This subclass adds the following methods to those of HTML::StripScripts.
+To install this module, run the following commands:
 
-    input ( TEXT )
-        Parses an HTML document and runs it through the filter. TEXT must be
-        the entire HTML document to be filtered, as a single flat string.
+    perl Build.PL
+    ./Build
+    ./Build test
+    ./Build install
 
-SUBCLASSING
-    The "HTML::StripScripts::Regex" class is subclassable, in exactly the
-    same way as "HMTL::StripScripts". See "SUBCLASSING" in
-    HTML::StripScripts for details.
+SUPPORT AND DOCUMENTATION
 
-SEE ALSO
-    HTML::StripScripts, HTML::StripScripts::Parser, HTML::Parser
+After installing, you can find documentation for this module with the
+perldoc command.
 
-AUTHOR
-    Nick Cleaton <nick@cleaton.net>
+    perldoc HTML::StripScripts::Regex
 
-COPYRIGHT
-    Copyright (C) 2003 Nick Cleaton. All Rights Reserved.
+You can also look for information at:
 
-    This module is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=HTML::StripScripts::Regex
+
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/HTML::StripScripts::Regex
+
+    CPAN Ratings
+        http://cpanratings.perl.org/d/HTML::StripScripts::Regex
+
+    Search CPAN
+        http://search.cpan.org/dist/HTML::StripScripts::Regex
+
+
+COPYRIGHT AND LICENCE
+
+Copyright 2009 Nick Cleaton, all rights reserved.
+
+This program is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
 

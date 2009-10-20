@@ -1,9 +1,8 @@
 
 use strict;
+use warnings;
 
 BEGIN {
-
-$^W = 1;
 
 use vars qw(@tests);
 @tests = (
@@ -116,8 +115,8 @@ END
   [
     'heavy duty de-interleave',
     q{<u>x<font size=4 color=red>y<i>b<b><font color=blue style="background-color: pink">X</u>Y},
-    q{<u>x<font size="4" color="red">y<i>b<b><font color="blue" style="background-color:pink">X}.
-    q{</font></b></i></font></u><font size="4" color="red"><i><b><font color="blue" style="background-color:pink">Y}.
+    q{<u>x<font color="red" size="4">y<i>b<b><font color="blue" style="background-color:pink">X}.
+    q{</font></b></i></font></u><font color="red" size="4"><i><b><font color="blue" style="background-color:pink">Y}.
     q{</font></b></i></font>}
   ],
   
@@ -149,7 +148,7 @@ END
 
     q{<i><a>}.
     q{<br /><span><tt><i><b><u><s><strike><em><ins><strong><dfn><big><small>}.
-    q{<font size="3" face="Helvetica" color="#FFFFFF">}.
+    q{<font color="#FFFFFF" face="Helvetica" size="3">}.
     q{<code><q><samp><kbd><var><del><cite><abbr><acronym><sub><sup><nobr>foo}.
     q{</nobr></sup></sub></acronym></abbr></cite></del></var></kbd></samp></q></code>}.
     q{</font>}.
